@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Books{% endblock %}
+
+{% block body %}
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<h1>Books</h1>
+			
+			{{ include('main/parts/table.html.twig') }}
+
+		</div>
+	</div>
+</div>
+{% endblock %}

@@ -1,0 +1,24 @@
+<table class="table table-bordered books_table">
+	<thead>
+		<tr>
+			<th>Book</th>
+			<th>Compatibility</th>
+			<th>Book Date</th>
+			<th>Female AVG age</th>
+			<th>Male AVG age</th>
+		</tr>
+	</thead>
+	<tbody>
+	{% if books %}
+		{% for book in books %}
+		<tr>
+			<td>{{ book.name }}</td>
+			<td>{{ book.compatibility }} %</td>
+			<td>{{ book.book_date.date | date("Y-m-d") }}</td>
+			<td>{{ book.female_avg }}</td>
+			<td>{{ book.male_avg }}</td>
+		</tr>
+		{% endfor %}
+	{% endif %}
+	</tbody>
+</table>

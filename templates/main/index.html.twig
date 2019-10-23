@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Books Stat{% endblock %}
+
+{% block body %}
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<h1>Books Stat</h1>
+
+			<form action="{{ path('search_book') }}" method="POST" id="search-form" class="form-inline">
+				<div class="form-group mb-2">
+					<label for="search_field">Search:</label>
+					<input type="text" name="search" class="form-control" id="search_field" placeholder="Type your text here">
+				</div>
+				<div class="form-group mb-2">
+					<button class="btn btn-primary">Search</button>					
+				</div>				
+			</form>
+			<p>
+				<small id="searchHelp" class="form-text text-muted">Type: Book title | age > 30</small>
+			</p>
+
+			<div id="books_stat">
+			
+				{% set books = books1 %}
+				<h2>Listing 1: "ZieLoNa MiLa|age>30"</h2>
+				{{ include('main/parts/table.html.twig') }}
+
+				<br><br>
+
+				{% set books = books2 %}
+				<h2>Listing 2: "ZiElonA Droga|age<30"</h2>
+				{{ include('main/parts/table.html.twig') }}
+
+			</div>
+
+		</div>
+	</div>
+</div>
+{% endblock %}
